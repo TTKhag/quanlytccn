@@ -3,12 +3,12 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
-  <meta name="theme-color" content="#0a0a0f" />
-  <meta name="description" content="Ứng dụng Quản lý Tài chính Cá nhân - Dark Finance" />
-  <title>Dark Finance | Quản lý Tài chính Cá nhân</title>
+  <meta name="theme-color" content="#0f1115" />
+  <meta name="description" content="Quản lý tài chính cá nhân" />
+  <title>Quản lý Tài chính</title>
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Playfair+Display:wght@500;600;700&display=swap" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet" />
   <link rel="stylesheet" href="css/styles.css" />
   <script src="https://unpkg.com/dexie@3.2.7/dist/dexie.min.js"></script>
   <script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.1/dist/chart.umd.min.js"></script>
@@ -16,24 +16,23 @@
 </head>
 <body>
   <div id="app">
-    <!-- Sidebar -->
     <aside id="sidebar" class="sidebar">
       <div class="sidebar-header">
         <div class="logo">
-          <span class="logo-icon">◆</span>
-          <span class="logo-text">Dark Finance</span>
+          <span class="logo-mark">T</span>
+          <span class="logo-text">Tài chính</span>
         </div>
-        <button id="sidebar-toggle" class="icon-btn" aria-label="Toggle sidebar">☰</button>
+        <button id="sidebar-toggle" class="icon-btn" aria-label="Đóng menu">✕</button>
       </div>
       <nav class="sidebar-nav">
         <a href="#dashboard" class="nav-item active" data-page="dashboard">
-          <span class="nav-icon">▣</span><span>Dashboard</span>
+          <span class="nav-icon">▣</span><span>Tổng quan</span>
         </a>
         <a href="#accounts" class="nav-item" data-page="accounts">
-          <span class="nav-icon">◎</span><span>Số dư & Tài khoản</span>
+          <span class="nav-icon">◎</span><span>Tài khoản</span>
         </a>
         <a href="#transactions" class="nav-item" data-page="transactions">
-          <span class="nav-icon">⇄</span><span>Thu Chi</span>
+          <span class="nav-icon">⇄</span><span>Thu chi</span>
         </a>
         <a href="#debts" class="nav-item" data-page="debts">
           <span class="nav-icon">↓</span><span>Nợ phải trả</span>
@@ -51,7 +50,7 @@
           <span class="nav-icon">▥</span><span>Báo cáo</span>
         </a>
         <a href="#audit" class="nav-item" data-page="audit">
-          <span class="nav-icon">◷</span><span>Lịch sử</span>
+          <span class="nav-icon">☰</span><span>Lịch sử</span>
         </a>
         <a href="#settings" class="nav-item" data-page="settings">
           <span class="nav-icon">⚙</span><span>Cài đặt</span>
@@ -65,31 +64,24 @@
       </div>
     </aside>
 
-    <!-- Main Content -->
     <main id="main" class="main">
       <header class="topbar">
         <div class="topbar-left">
           <button id="mobile-menu-btn" class="icon-btn mobile-only">☰</button>
-          <h1 id="page-title">Dashboard</h1>
+          <h1 id="page-title">Tổng quan</h1>
         </div>
         <div class="topbar-right">
           <button id="btn-quick-add" class="btn btn-primary btn-sm">+ Thêm nhanh</button>
-          <button id="btn-backup" class="btn btn-ghost btn-sm" title="Backup dữ liệu">⇩ Backup</button>
+          <button id="btn-backup" class="btn btn-ghost btn-sm" title="Sao lưu">Sao lưu</button>
         </div>
       </header>
-      <div id="page-content" class="page-content">
-        <!-- Pages injected here -->
-      </div>
+      <div id="page-content" class="page-content"></div>
     </main>
   </div>
 
-  <!-- Modals container -->
   <div id="modal-root"></div>
-
-  <!-- Toast -->
   <div id="toast-container"></div>
 
-  <!-- Scripts -->
   <script src="js/db.js"></script>
   <script src="js/utils.js"></script>
   <script src="js/interest.js"></script>
